@@ -9,6 +9,14 @@ using Vector;
 
 namespace Analog
 {
+    /// <summary>
+    /// Main class who create analog clock
+    /// in window form(created on CLR v4.0.30319).
+    /// Class have two subclass:
+    /// -Hand, this class creating hand for clock and 
+    /// counting pos via angel 
+    /// -Face, this class creating background for clock
+    /// </summary>
     public class Clock
     {
         public Clock() {}
@@ -51,7 +59,7 @@ namespace Analog
                 end.y = Convert.ToInt32(Begin.y - radius * Math.Cos(rotation * Math.PI / 180));
             }
 
-            private Color color = new Color();//default color
+            private Color color = Color.Aqua;//default color
             private vector2 begin = new vector2(100, 200);//default position
             private vector2 end = new vector2(0, 0);//second point of line who will be automatical counting 
             private float radius = 100;//radius for counting end_vector(last point) via angle
@@ -64,7 +72,7 @@ namespace Analog
                 this.pos = pos;this.thickness = thickness; this.radius = radius; this.color = color;
             }
 
-            public Color color = new Color();
+            public Color color = Color.DarkViolet;
             public vector2 pos = new vector2(165, 150);
             public int thickness = 3;
             public float radius = 100;

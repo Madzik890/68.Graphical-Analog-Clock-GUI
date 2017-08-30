@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Vector
 {
+    /// <summary>
+    /// Simple struct who have 2 int variable.
+    /// This struct was created for ease of use 
+    /// with CLR Size and easier making count
+    /// </summary>
+
     public struct vector2
     {
         public vector2(int x = 0, int y = 0) { this.x = x; this.y = y; }//constructor who assigns all variable with default method

@@ -37,9 +37,6 @@
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showTimeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +44,9 @@
             this.secondsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.alwaysTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,8 +100,7 @@
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showTimeToolStripMenuItem1,
-            this.changeTimeToolStripMenuItem});
+            this.showTimeToolStripMenuItem1});
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
             this.timeToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.timeToolStripMenuItem.Text = "Time";
@@ -113,32 +112,11 @@
             this.showTimeToolStripMenuItem1.Text = "Show time";
             this.showTimeToolStripMenuItem1.Click += new System.EventHandler(this.showTimeToolStripMenuItem1_Click);
             // 
-            // changeTimeToolStripMenuItem
-            // 
-            this.changeTimeToolStripMenuItem.Name = "changeTimeToolStripMenuItem";
-            this.changeTimeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.changeTimeToolStripMenuItem.Text = "Change time";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Visible = false;
-            // 
             // styleToolStripMenuItem
             // 
             this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeColorToolStripMenuItem});
+            this.changeColorToolStripMenuItem,
+            this.alwaysTopToolStripMenuItem});
             this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
             this.styleToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.styleToolStripMenuItem.Text = "Style";
@@ -174,18 +152,44 @@
             this.secondsToolStripMenuItem.Name = "secondsToolStripMenuItem";
             this.secondsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.secondsToolStripMenuItem.Text = "Seconds";
+            this.secondsToolStripMenuItem.Click += new System.EventHandler(this.secondsToolStripMenuItem_Click);
             // 
             // minuteToolStripMenuItem
             // 
             this.minuteToolStripMenuItem.Name = "minuteToolStripMenuItem";
             this.minuteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.minuteToolStripMenuItem.Text = "Minutes";
+            this.minuteToolStripMenuItem.Click += new System.EventHandler(this.minuteToolStripMenuItem_Click);
             // 
             // hoursToolStripMenuItem
             // 
             this.hoursToolStripMenuItem.Name = "hoursToolStripMenuItem";
             this.hoursToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hoursToolStripMenuItem.Text = "Hours";
+            this.hoursToolStripMenuItem.Click += new System.EventHandler(this.hoursToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(135, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Visible = false;
+            // 
+            // alwaysTopToolStripMenuItem
+            // 
+            this.alwaysTopToolStripMenuItem.Name = "alwaysTopToolStripMenuItem";
+            this.alwaysTopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alwaysTopToolStripMenuItem.Text = "Always top";
+            this.alwaysTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysTopToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -215,7 +219,6 @@
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showTimeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem changeTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
@@ -225,6 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem secondsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minuteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hoursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alwaysTopToolStripMenuItem;
     }
 }
 

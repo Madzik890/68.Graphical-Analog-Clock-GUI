@@ -13,7 +13,7 @@ namespace Analog_Clock
 {
     public partial class Form1 : Form
     {
-        private bool stop_clock = false;//varible for turn off or on clock
+        private bool stop_clock = false;//variable for turn off or on clock
         private Clock clock = new Clock();
 
         public Form1()
@@ -51,12 +51,12 @@ namespace Analog_Clock
                 MoveClockHands();
         }
 
-        private void showTimeToolStripMenuItem_Click(object sender, EventArgs e)//Group:Start name:start
+        private void showTimeToolStripMenuItem_Click(object sender, EventArgs e)//starting clock
         {
             stop_clock = false;
         }
 
-        private void stopToolStripMenuItem_Click(object sender, EventArgs e)//Group:Start name:stop
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)//stopping clock
         {
             stop_clock = true;
         }
@@ -67,17 +67,48 @@ namespace Analog_Clock
                 label1.Visible = false;
             else
                 label1.Visible = true;
+            showTimeToolStripMenuItem1.Checked = label1.Visible;
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)//Group:Exit name:exit
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)//closing app
         {
             this.Close();
         }
-
-        private void watchToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// changing color of
+        /// </summary>
+        private void watchToolStripMenuItem_Click(object sender, EventArgs e)//watch face
         {
             InputColor form = new InputColor();
-            form.Show(clock);          
+            form.Show(clock,InputColor.PartClock.face);          
+        }
+
+        private void secondsToolStripMenuItem_Click(object sender, EventArgs e)//seconds clock hands
+        {
+            InputColor form = new InputColor();
+            form.Show(clock, InputColor.PartClock.seconds_hand);
+        }
+
+        private void minuteToolStripMenuItem_Click(object sender, EventArgs e)//minutes clock hands
+        {
+            InputColor form = new InputColor();
+            form.Show(clock, InputColor.PartClock.minutes_hand);
+        }
+
+        private void hoursToolStripMenuItem_Click(object sender, EventArgs e)//hours clock hands
+        {
+            InputColor form = new InputColor();
+            form.Show(clock, InputColor.PartClock.hours_hand);
+        }
+
+        private void alwaysTopToolStripMenuItem_Click(object sender, EventArgs e)//setting always top for window
+        {
+            if (this.TopMost)
+                this.TopMost = false;
+            else
+                this.TopMost = true;
+
+            alwaysTopToolStripMenuItem.Checked = this.TopMost;
         }
     }
 }

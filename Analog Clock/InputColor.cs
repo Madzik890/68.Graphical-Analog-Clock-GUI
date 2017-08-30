@@ -13,44 +13,58 @@ namespace Analog_Clock
 {
     public partial class InputColor : Form
     {
-        private Clock clock;//
+        private Clock clock;//reference for original clock
+        private PartClock partclock;
+
+        public enum PartClock//enum for changing color of the item
+        {
+            seconds_hand,
+            minutes_hand,
+            hours_hand,
+            face
+        }
 
         public InputColor()
         {
             InitializeComponent();
         }
 
-        public void Show(Clock clock)
+        public void Show(Clock clock,PartClock partclock)
         {
             base.Show();//evocation base function
             this.clock = clock;//creating reference for base clock
+            this.partclock = partclock;//setting changer color mode
         }
 
-        private void SetBackgroundColor()
+        private void SetBackgroundColor(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownR.Value, (int)numericUpDownR.Value);
+            //showing input color on background
+            this.BackColor = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownG.Value,(int)numericUpDownB.Value);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(clock !=null)
-            clock.face.color = Color.Red;
-        }
+            if (clock != null)//if clock was add successfully 
+            {
+                switch (partclock)
+                {
+                    case PartClock.face:
+                        clock.face.color = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownG.Value, (int)numericUpDownB.Value);//changing color 
+                        break;
 
-        private void numericUpDownR_ValueChanged(object sender, EventArgs e)
-        {
-            SetBackgroundColor();
-        }
+                    case PartClock.seconds_hand:
+                        clock.hands[0].Color = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownG.Value, (int)numericUpDownB.Value);//changing color 
+                        break;
 
-        private void numericUpDownG_ValueChanged(object sender, EventArgs e)
-        {
-            SetBackgroundColor();
-        }
+                    case PartClock.minutes_hand:
+                        clock.hands[1].Color = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownG.Value, (int)numericUpDownB.Value);//changing color 
+                        break;
 
-        private void numericUpDownB_ValueChanged(object sender, EventArgs e)
-        {
-            SetBackgroundColor();
+                    case PartClock.hours_hand:
+                        clock.hands[2].Color = Color.FromArgb((int)numericUpDownR.Value, (int)numericUpDownG.Value, (int)numericUpDownB.Value);//changing color 
+                        break;
+                }
+            }
         }
-
     }
 }

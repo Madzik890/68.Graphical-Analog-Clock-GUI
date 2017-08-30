@@ -53,26 +53,41 @@
             // numericUpDownR
             // 
             this.numericUpDownR.Location = new System.Drawing.Point(36, 12);
+            this.numericUpDownR.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownR.Name = "numericUpDownR";
             this.numericUpDownR.Size = new System.Drawing.Size(48, 20);
             this.numericUpDownR.TabIndex = 1;
-            this.numericUpDownR.ValueChanged += new System.EventHandler(this.numericUpDownR_ValueChanged);
+            this.numericUpDownR.ValueChanged += new System.EventHandler(this.SetBackgroundColor);
             // 
             // numericUpDownG
             // 
             this.numericUpDownG.Location = new System.Drawing.Point(133, 12);
+            this.numericUpDownG.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownG.Name = "numericUpDownG";
             this.numericUpDownG.Size = new System.Drawing.Size(48, 20);
             this.numericUpDownG.TabIndex = 2;
-            this.numericUpDownG.ValueChanged += new System.EventHandler(this.numericUpDownG_ValueChanged);
+            this.numericUpDownG.ValueChanged += new System.EventHandler(this.SetBackgroundColor);
             // 
             // numericUpDownB
             // 
             this.numericUpDownB.Location = new System.Drawing.Point(224, 12);
+            this.numericUpDownB.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownB.Name = "numericUpDownB";
             this.numericUpDownB.Size = new System.Drawing.Size(48, 20);
             this.numericUpDownB.TabIndex = 3;
-            this.numericUpDownB.ValueChanged += new System.EventHandler(this.numericUpDownB_ValueChanged);
+            this.numericUpDownB.ValueChanged += new System.EventHandler(this.SetBackgroundColor);
             // 
             // label1
             // 
