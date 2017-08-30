@@ -14,16 +14,17 @@ namespace Analog
         public Clock() {}
 
         public List<Hand> hands = new List<Hand>();
-        public Face face = new Face(new vector2(165,150),5,100,Color.Chocolate);
+        public Face face = new Face(new vector2(155,130),5,100,Color.Chocolate);
 
         public virtual void Draw(PaintEventArgs e)
         {
             DrawBackground(e);
-            DrawLeads(e);
+            DrawHands(e);
         }
         public virtual void RecentryOnWindow(Size size)//function which center the clock in window
         {
-            foreach(Hand value in hands)
+            face.pos = new vector2(size.Width / 2, size.Height / 2);
+            foreach (Hand value in hands)
             {
                 value.Begin = new vector2(size.Width/2, size.Height/2);
             }
@@ -71,7 +72,7 @@ namespace Analog
 
         private vector2 position = new vector2(165, 150);
 
-        private void DrawLeads(PaintEventArgs e)
+        private void DrawHands(PaintEventArgs e)//drawing all clock hands and calculating angle for them
         {
             foreach (Hand value in hands)
             {
