@@ -11,9 +11,7 @@ namespace Analog
 {
     public class Clock
     {
-        public Clock()
-        {
-        }
+        public Clock() {}
 
         public List<Hand> hands = new List<Hand>();
         public Face face = new Face(new vector2(165,150),5,100,Color.Chocolate);
@@ -46,7 +44,7 @@ namespace Analog
             public float thickness = 3;
             public double rotation = 0;//rotation lead
 
-            public virtual void CalculateAngel()//public function which calculate shape of lead for the given angel   
+            public virtual void CalculateAngle()//public function which calculate shape of lead for the given angle   
             {
                 end.x = Convert.ToInt32(Begin.x + radius * Math.Sin(rotation * Math.PI / 180));
                 end.y = Convert.ToInt32(Begin.y - radius * Math.Cos(rotation * Math.PI / 180));
@@ -55,7 +53,7 @@ namespace Analog
             private Color color = new Color();//default color
             private vector2 begin = new vector2(100, 200);//default position
             private vector2 end = new vector2(0, 0);//second point of line who will be automatical counting 
-            private float radius = 100;//radius for counting end_vector(last point) via angel
+            private float radius = 100;//radius for counting end_vector(last point) via angle
         }
         public class Face//class who create clock face
         {
@@ -79,7 +77,7 @@ namespace Analog
             {
                 Pen pen = new Pen(value.Color, value.thickness);
                 // Create points that define line.
-                value.CalculateAngel();
+                value.CalculateAngle();
 
                 Point point1 = new Point(value.Begin.x, value.Begin.y);
                 Point point2 = new Point(value.End.x, value.End.y);
